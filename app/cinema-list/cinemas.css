@@ -1,0 +1,47 @@
+.cinemas li {
+    height: max-content;
+    padding-top: 15px;
+    margin-right: 15px;
+    border-bottom: 1px solid #adadad;
+    width: 500px;
+}
+
+.cinemas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+.cinema-name {
+    font-size: 25px;
+}
+
+.cinema-mini-stats.ng-enter,
+.cinema-mini-stats.ng-leave,
+.cinema-mini-stats.ng-move {
+    transition: 0.5s linear all;
+}
+
+.cinema-mini-stats.ng-enter,
+.cinema-mini-stats.ng-move {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.cinema-mini-stats.ng-enter.ng-enter-active,
+.cinema-mini-stats.ng-move.ng-move-active {
+    height: 120px;
+    opacity: 1;
+}
+
+.cinema-mini-stats.ng-leave {
+    opacity: 1;
+    overflow: hidden;
+}
+
+.cinema-mini-stats.ng-leave.ng-leave-active {
+    height: 0;
+    opacity: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+}

@@ -1,0 +1,33 @@
+.ng-isolate-scope {
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #337ab7;
+    padding-right: 50px;
+}
+
+.menu li {
+    float: right;
+}
+
+.menu li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    background-color: #2e6da4;
+}
+
+.login-icon {
+    width: 15px;
+    height: 15px;
+}

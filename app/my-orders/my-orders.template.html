@@ -1,0 +1,13 @@
+<ul class="user-orders">
+    <li ng-repeat="order in $ctrl.orders">
+        <p>{{order.creationDateTime}}</p>
+        <p>{{order.overallPrice}}</p>
+        <p>{{order.orderStatus}}</p>
+        <p>{{order.event.startDateTime}}</p>
+        <p>{{order.event.movie.name}}</p>
+        <p>{{order.event.eventStatus}}</p>
+        <p>{{order.event.movieRoom.id}}</p>
+        <p>{{order.event.movieRoom.roomType.name}}</p>
+        <p>-------------------------------------------------</p>
+    </li>
+</ul>

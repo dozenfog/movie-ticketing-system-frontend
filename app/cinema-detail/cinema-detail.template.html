@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <h1>{{$ctrl.cinema.name}}</h1>
+
+    <ul class="cinema-stats">
+        <li>
+            <p>{{$ctrl.cinema.address}}</p>
+        </li>
+        <li>
+            <p>
+                <img ng-src="https://cdn-icons-png.flaticon.com/512/2942/2942076.png" alt="City" width="20px"
+                     height="20px"/>
+                {{$ctrl.cinema.city.name}}
+            </p>
+        </li>
+        <li>
+            <p>
+                <img ng-src="https://cdn-icons-png.flaticon.com/512/546/546394.png" alt="Email" width="20px"
+                     height="20px"/>
+                {{$ctrl.cinema.email}}
+            </p>
+        </li>
+        <li>
+            <p>
+                <img ng-src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="phone" width="20px"
+                     height="20px">
+                {{$ctrl.cinema.phone}}
+            </p>
+        </li>
+    </ul>
+
+    <p class="search">
+        Search:
+        <label>
+            <input ng-model="$ctrl.query"/>
+        </label>
+    </p>
+    <ul class="cinema-events">
+        <!-- -->
+        <li ng-repeat="movieEvents in $ctrl.eventMatrix | filter:$ctrl.query"
+            class="cinema-movie-with-events">
+            <div class="cinema-movie-with-events-poster">
+                <a href="#!/movies/{{movieEvents[0][0].movie.id}}">
+                    <img ng-src="{{movieEvents[0][0].movie.imageUrl}}" alt="{{movieEvents[0][0].movie.name}}"
+                         class="cinema-movie-poster"/>
+                </a>
+            </div>
+            <ul class="cinema-movie-stats">
+                <li>
+                    <h4>{{movieEvents[0][0].movie.name}}</h4>
+                </li>
+                <li><p>
+                    <img ng-src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Rating"
+                         width="20px"
+                         height="20px"/>
+                    {{movieEvents[0][0].movie.rating}}
+                </p></li>
+                <li class="mini-stats">
+                    <p>{{movieEvents[0][0].movie.ageRating}}, {{movieEvents[0][0].movie.durationInMinutes}} min</p>
+                </li>
+            </ul>
+            <ul class="cinema-movie-rooms">
+                <li ng-repeat="movieRoomEvents in movieEvents" class="cinema-movie-rooms-stats">
+                    <p class="movie-room-number">ROOM {{movieRoomEvents[0].movieRoom.id}}</p>
+                    <p>{{movieRoomEvents[0].movieRoom.roomType.name}}</p>
+                    <ul class="cinema-movie-rooms-events">
+                        <li ng-repeat="movieRoomEvent in movieRoomEvents" class="cinema-movie-with-events-event">
+                            <button ng-click="buyTicket(movieRoomEvent.id)">{{movieRoomEvent.startDateTime}}</button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+

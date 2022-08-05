@@ -1,0 +1,97 @@
+.cinema-stats {
+        display: flex;
+    padding-left: 0;
+    padding-top: 10px;
+}
+
+.cinema-stats li + li {
+    border-left: 1px solid #000000
+}
+
+.cinema-stats li {
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 20px;
+}
+
+.search {
+    padding-top: 20px;
+}
+
+.cinema-events {
+        padding: 0;
+}
+
+.cinema-movie-with-events {
+    height: max-content;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+.cinema-movie-with-events-poster {
+    width: 150px;
+    flex-grow: 1;
+}
+
+.cinema-movie-stats {
+        padding-left: 0;
+    padding-right: 15px;
+    width: 150px;
+    flex-grow: 1;
+}
+
+.cinema-movie-poster {
+    width: 150px;
+}
+
+.mini-stats {
+    display: flex;
+}
+
+.cinema-movie-rooms {
+        padding: 0;
+    flex-grow: 10;
+}
+
+.movie-room-number {
+    font-weight: bold;
+}
+
+.cinema-movie-rooms-stats {
+    padding-bottom: 20px;
+}
+
+.cinema-movie-rooms-events {
+        padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 160px);
+    gap: 20px;
+}
+
+.cinema-movie-with-events-event {
+    flex-grow: 1;
+}
+
+.cinema-movie-with-events-event {
+    border-radius: 4px;
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 10px;
+}
+
+.cinema-movie-with-events-event:hover {
+    background-color: black;
+}
+
+.cinema-movie-with-events-event:hover a {
+    color: white;
+}
+
+span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}

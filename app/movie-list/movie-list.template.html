@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <p>
+        Search:
+        <label>
+            <input ng-model="$ctrl.query"/>
+        </label>
+    </p>
+    <p>
+        Sort by:
+        <label>
+            <select ng-model="$ctrl.orderProp">
+                <option value="name">Alphabetical</option>
+                <option value="durationInMinutes">Length</option>
+            </select>
+        </label>
+    </p>
+    <ul class="movies">
+        <li ng-repeat="movie in $ctrl.movies | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+            <a href="#!/movies/{{movie.id}}">
+                <img ng-src="{{movie.imageUrl}}" alt="{{movie.name}}" width="200px" height="300px"/>
+            </a>
+            <p class="rating">
+                <img ng-src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Rating" width="20px" height="20px"/>
+                {{movie.rating}}
+            </p>
+            <a href="#!/movies/{{movie.id}}">
+                <p>{{movie.name}}</p>
+            </a>
+        </li>
+    </ul>
+</div>

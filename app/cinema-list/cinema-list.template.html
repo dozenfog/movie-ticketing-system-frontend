@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <p>
+        Search:
+        <label>
+            <input ng-model="$ctrl.query"/>
+        </label>
+    </p>
+    <ul class="cinemas">
+        <li ng-repeat="cinema in $ctrl.cinemas | filter:$ctrl.query" class="cinema-mini-stats">
+            <a href="#!/movie-theaters/{{cinema.id}}">
+                <p class="cinema-name">{{cinema.name}}</p>
+            </a>
+            <p>{{cinema.address}}</p>
+            <p>{{cinema.city.name}}</p>
+            <p><img ng-src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="phone" width="20px" height="20px">
+                {{cinema.phone}}</p>
+        </li>
+    </ul>
+</div>

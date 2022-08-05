@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <h1>{{$ctrl.movie.name}}</h1>
+
+    <ul class="movie-stats">
+        <li><p>{{$ctrl.movie.ageRating}}</p></li>
+        <li><p>
+            <img ng-src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Rating" width="20px"
+                 height="20px"/>
+            {{$ctrl.movie.rating}}
+        </p></li>
+        <li><p>{{$ctrl.movie.durationInMinutes}} min</p></li>
+    </ul>
+
+    <div class="description">
+        <p>{{$ctrl.movie.description}}</p>
+    </div>
+
+    <ul class="genres">
+        <li ng-repeat="genre in $ctrl.movie.genres">
+            <span>{{genre.name}}</span>
+        </li>
+    </ul>
+
+    <h3 class="photos-heading">Photos</h3>
+
+    <img ng-src="{{$ctrl.mainImageUrl}}" class="movie-main-image"/>
+
+    <ul class="movie-thumbs">
+        <li ng-repeat="img in $ctrl.movie.movieImages">
+            <img ng-src="{{img.url}}" ng-click="$ctrl.setImage(img.url)" alt="movie-thumb"/>
+        </li>
+    </ul>
+
+</div>

@@ -1,0 +1,26 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container-fluid {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+h1 {
+    border-bottom: 1px solid gray;
+    font-weight: bold;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+img {
+    border-radius: 5px;
+}
+
+ul {
+    list-style: none;
+}

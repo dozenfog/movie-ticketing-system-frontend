@@ -1,0 +1,47 @@
+<form ng-submit="submitSignupForm()">
+    <ul>
+        <li>
+            <label for="firstName"><b>First name</b></label>
+            <input type="text" placeholder="Enter first name" id="firstName" ng-model="firstName" required>
+        </li>
+        <li>
+            <label for="lastName"><b>Last name</b></label>
+            <input type="text" placeholder="Enter last name" id="lastName" ng-model="lastName" required>
+        </li>
+        <li>
+            <label for="userName"><b>Username</b></label>
+            <input type="text" placeholder="Enter user name" id="userName" ng-model="userName" required>
+        </li>
+        <li>
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter email" id="email" ng-model="email" required>
+        </li>
+        <li>
+            <label for="phone"><b>Phone</b></label>
+            <input type="text" placeholder="Enter phone" id="phone" ng-model="phone" required>
+        </li>
+        <li>
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter password" id="password" ng-model="password" required>
+        </li>
+        <li>
+            <label for="address"><b>Address</b></label>
+            <input type="text" placeholder="Enter address" id="address" ng-model="address">
+        </li>
+        <li>
+            <label for="city"><b>City</b></label>
+            <input type="number" placeholder="Enter city id" id="city" ng-model="cityId" required>
+        </li>
+        <li>
+            <label for="birthdate"><b>Birth date</b></label>
+            <input type="text" placeholder="Enter date" id="birthdate" ng-model="birthDate">
+        </li>
+        <li>
+            <label for="category"><b>Category</b></label>
+            <input type="number" placeholder="Enter category" id="category" ng-model="userCategoryId" required>
+        </li>
+        <li>
+            <button type="submit">Register</button>
+        </li>
+    </ul>
+</form>

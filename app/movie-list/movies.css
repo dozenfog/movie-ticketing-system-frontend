@@ -1,0 +1,16 @@
+.movies li {
+    height: min-content;
+    width: min-content;
+    padding-top: 15px;
+}
+
+.movies {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 0;
+}
+
+.rating {
+    padding-top: 10px;
+}
