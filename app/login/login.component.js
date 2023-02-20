@@ -7,7 +7,8 @@ angular.module('login').component('login', {
             $scope.submitLoginForm = function () {
                 User.get().login({username: $scope.username, password: $scope.password},
                     function success(data, headers) {
-                        $location.path('#!/movies');
+                        User.setAuthenticated(true);
+                        $location.path('#!/me');
                         $rootScope.token = headers('authorization');
                     });
             };
