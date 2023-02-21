@@ -1,36 +1,37 @@
-#login_form {
+#signup_form {
     padding: 20px 20px 0 20px;
     border-radius: 10px;
     background-image: linear-gradient(270deg, rgba(8,174,234,0.4), rgba(42,245,152,0.4));
 }
 
-#login_page {
+#signup_page {
     display: flex;
     justify-content: center;
-    padding-top: 120px;
+    padding-top: 20px;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 20px;
 }
 
-#username_header, #password_header {
+.field_header {
     font-size: 20px;
 }
 
-#login_ul {
+#signup_ul {
     margin-bottom: 0;
 }
 
-#login_ul li {
+#signup_ul li {
     padding-bottom: 15px;
 }
 
-#username, #password {
+#firstName, #lastName, #userName, #email, #phone, #address, #city, #category, #password, #birthdate {
     width: 400px;
     line-height: 30px;
     font-size: 15px;
 }
 
-#login_button {
+#signup_button {
     background-image: linear-gradient(270deg, #08AEEA 0%, #2AF598 100%);
     color: white;
     border: none;
@@ -40,7 +41,7 @@
     margin-top: 10px;
 }
 
-#signup {
+#login {
     color: black;
     text-decoration: revert;
     display: block;

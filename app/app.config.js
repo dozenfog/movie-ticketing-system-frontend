@@ -24,12 +24,15 @@ angular.module('movieTicketsApp').config(['$routeProvider',
     }
 ]).run(['$rootScope', '$location', 'User', function ($rootScope, $location, User) {
     $rootScope.$on("$locationChangeStart", function (event, next) {
-        if (next.toString().endsWith("/account")) {
-            if (User.isAuthenticated()) {
-                $location.url("/me");
-            } else {
-                $location.url("/login");
+        const urls = ["/account", "/me", "/orders/me", "/tickets/pick/:orderId"];
+        urls.forEach(url => {
+            if (next.toString().endsWith(url)) {
+                if (User.isAuthenticated()) {
+                    $location.url(url);
+                } else {
+                    $location.url("/login");
+                }
             }
-        }
+        });
     });
 }]);

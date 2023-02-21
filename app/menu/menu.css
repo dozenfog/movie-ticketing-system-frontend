@@ -6,7 +6,7 @@
 .menu {
     list-style-type: none;
     overflow: hidden;
-    background-color: #337ab7;
+    background-image: linear-gradient(270deg, #08AEEA 0%, #2AF598 100%);
     padding-right: 50px;
 }
 

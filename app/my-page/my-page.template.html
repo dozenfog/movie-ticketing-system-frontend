@@ -1,24 +1,110 @@
-<ul class="user-stats">
-    <li>{{$ctrl.info.firstName}}</li>
-    <li>{{ctrl.info.lastName}}</li>
-    <li>{{$ctrl.info.userName}}</li>
-    <li>{{$ctrl.info.email}}</li>
-    <li>{{$ctrl.info.phone}}</li>
-    <li>{{$ctrl.info.address}}</li>
-    <li>{{$ctrl.info.city.name}}</li>
-    <li>{{$ctrl.info.registrationDateTime}}</li>
-    <li>{{$ctrl.info.userCategory.name}}</li>
-    <li>{{$ctrl.info.userCategory.discountPercentage}}%</li>
-    <p>Weather</p>
-    <li>{{$ctrl.info.weather.temperature}} deg</li>
-    <li>{{$ctrl.info.weather.feelsLike}} deg</li>
-    <li>{{$ctrl.info.weather.pressure}}</li>
-    <li>{{$ctrl.info.weather.humidity}}</li>
-    <li>{{$ctrl.info.weather.minTemperature}}</li>
-    <li>{{$ctrl.info.weather.maxTemperature}}</li>
-    <li>{{$ctrl.info.weather.visibility}}</li>
-    <li>{{$ctrl.info.weather.windSpeed}}</li>
-    <li>{{$ctrl.info.weather.windDegree}}</li>
-    <li>{{$ctrl.info.weather.cloudiness}}</li>
-</ul>
-<a href="#!orders/me">My Orders</a>
+<div class="container-fluid">
+    <h1>{{$ctrl.info.firstName}} {{$ctrl.info.lastName}} [{{$ctrl.info.userName}}]</h1>
+
+    <ul class="user-stats">
+        <li>
+            <p>{{$ctrl.info.address ? $ctrl.info.address : "Unknown address"}}</p>
+        </li>
+        <li>
+            <p>
+                <img ng-src="https://cdn-icons-png.flaticon.com/512/2942/2942076.png" alt="City" width="20px"
+                     height="20px"/>
+                {{$ctrl.info.city.name}}
+            </p>
+        </li>
+        <li>
+            <p>
+                <img ng-src="https://cdn-icons-png.flaticon.com/512/546/546394.png" alt="Email" width="20px"
+                     height="20px"/>
+                {{$ctrl.info.email}}
+            </p>
+        </li>
+        <li>
+            <p>
+                <img ng-src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="phone" width="20px"
+                     height="20px">
+                {{$ctrl.info.phone}}
+            </p>
+        </li>
+    </ul>
+    <p id="reg-date">
+        Member from: {{$ctrl.info.registrationDateTime}}
+    </p>
+    <ul class="user-stats-1">
+        <li>
+            <p>
+                {{$ctrl.info.userCategory.name}}
+            </p>
+        </li>
+        <li>
+            <p>
+                {{$ctrl.info.userCategory.discountPercentage}}% OFF
+            </p>
+        </li>
+    </ul>
+    <h2 id="weather_header">Today</h2>
+    <ul class="weather-stats">
+        <li>
+            <ul class="inner-stats">
+                <li>
+                    <img ng-src="{{$ctrl.getWeatherImage($ctrl.info.weather.cloudiness)}}" alt="Weather" width="170px"
+                         height="170px"/>
+                </li>
+                <li>
+                    {{$ctrl.info.weather.temperature}}°C
+                </li>
+                <li>
+                    MIN: {{$ctrl.info.weather.minTemperature}}°C
+                </li>
+                <li>
+                    MAX: {{$ctrl.info.weather.maxTemperature}}°C
+                </li>
+                <li>
+                    Feels like: {{$ctrl.info.weather.feelsLike}}°C
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul class="inner-stats">
+                <li>
+                    <img ng-src="https://cdn-icons-png.flaticon.com/512/2903/2903592.png" alt="Humidity" width="170px"
+                         height="170px"/>
+                </li>
+                <li>
+                    {{$ctrl.info.weather.humidity}}%
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul class="inner-stats">
+                <li>
+                    <img ng-src="https://cdn-icons-png.flaticon.com/512/2204/2204367.png" alt="Wind" width="170px"
+                         height="170px"/>
+                </li>
+                <li>
+                    {{$ctrl.info.weather.windSpeed}} km/hr
+                </li>
+                <li>
+                    Degree: {{$ctrl.info.weather.windDegree}}°
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul class="inner-stats">
+                <li>
+                    <img ng-src="https://cdn-icons-png.flaticon.com/512/2910/2910189.png" alt="Visibility" width="170px"
+                         height="170px"/>
+                </li>
+                <li>
+                    {{$ctrl.info.weather.visibility}} m
+                </li>
+                <li>
+                    Pressure: {{$ctrl.info.weather.pressure}} hPa
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <p>
+        <a href="#!orders/me">My Orders</a>
+    </p>
+</div>

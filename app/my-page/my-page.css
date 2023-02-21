@@ -1,0 +1,46 @@
+.user-stats, .user-stats-1, .weather-stats {
+    display: flex;
+    padding-left: 0;
+    padding-top: 10px;
+}
+
+.user-stats li + li {
+    border-left: 1px solid #000000
+}
+
+.user-stats li, .user-stats-1 li {
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 20px;
+}
+
+.user-stats-1 li {
+    background-image: linear-gradient(270deg, rgb(8,174,234), rgb(42,245,152));
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 32px;
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+#reg-date {
+    padding-left: 10px;
+}
+
+#weather_header {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.weather-stats {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.inner-stats {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,18 +1,26 @@
-<form ng-submit="submitLoginForm()">
-    <ul id="login_ul">
-        <li>
-            <div id="username_header">Username</div>
-            <label for="username"></label><input type="text" placeholder="Enter username" id="username"
-                                                 ng-model="username" required>
-        </li>
-        <li>
-            <div id="password_header">Password</div>
-            <label for="password"></label><input type="password" placeholder="Enter password" id="password"
-                                                 ng-model="password" required>
-        </li>
-        <li>
-            <button type="submit" id="login_button">Login</button>
-        </li>
-    </ul>
-</form>
-<a href="#!/signup" id="signup">Sign up</a>
+<div id="login_page">
+    <form ng-submit="submitLoginForm()" id="login_form">
+        <ul id="login_ul">
+            <li>
+                <div id="username_header">Username</div>
+                <label for="username">
+                    <input type="text" placeholder="Enter username" id="username"
+                           ng-model="username" required>
+                </label>
+            </li>
+            <li>
+                <div id="password_header">Password</div>
+                <label for="password">
+                    <input type="password" placeholder="Enter password" id="password"
+                           ng-model="password" required>
+                </label>
+            </li>
+            <li>
+                <button type="submit" id="login_button">Login</button>
+            </li>
+            <li>
+                <a href="#!/signup" id="signup">Sign up</a>
+            </li>
+        </ul>
+    </form>
+</div>
