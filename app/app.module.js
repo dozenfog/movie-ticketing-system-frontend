@@ -9,7 +9,6 @@ angular.module('movieTicketsApp', [
     'cinemaDetail',
     'movieList',
     'movieDetail',
-    'authForm',
     'login',
     'signup',
     'myPage',

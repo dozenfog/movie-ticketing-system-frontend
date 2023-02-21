@@ -10,8 +10,6 @@ angular.module('movieTicketsApp').config(['$routeProvider',
             template: '<movie-list></movie-list>'
         }).when('/movies/:movieId', {
             template: '<movie-detail></movie-detail>'
-        }).when('/account', {
-            template: '<auth-form></auth-form>'
         }).when('/login', {
             template: '<login></login>'
         }).when('/signup', {
@@ -24,4 +22,14 @@ angular.module('movieTicketsApp').config(['$routeProvider',
             template: '<ticket-picker></ticket-picker>'
         }).otherwise('/movies');
     }
-]);
+]).run(['$rootScope', '$location', 'User', function ($rootScope, $location, User) {
+    $rootScope.$on("$locationChangeStart", function (event, next) {
+        if (next.toString().endsWith("/account")) {
+            if (User.isAuthenticated()) {
+                $location.url("/me");
+            } else {
+                $location.url("/login");
+            }
+        }
+    });
+}]);

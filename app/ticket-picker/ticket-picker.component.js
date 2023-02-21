@@ -11,7 +11,7 @@ angular.module('ticketPicker').component('ticketPicker', {
                 User.get($rootScope.token).addTickets({
                     orderId: self.orders[self.orders.length - 1].id,
                 }, [parseInt($scope.ticketNum)], function success() {
-                    $location.path('#!/orders/me');
+                    $location.url('/orders/me');
                 });
             };
         }

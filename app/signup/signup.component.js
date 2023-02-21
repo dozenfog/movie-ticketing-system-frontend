@@ -10,7 +10,8 @@ angular.module('signup').component('signup', {
                     email: $scope.email, phone: $scope.phone, password: $scope.password, address: $scope.address,
                     cityId: $scope.cityId, birthDate: $scope.birthDate, userCategoryId: $scope.userCategoryId, role: 1
                 }, function success() {
-                    $location.path('#!/login');
+                    User.setAuthenticated(true);
+                    $location.url('/login');
                 });
             };
         }

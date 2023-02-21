@@ -1,0 +1,34 @@
+ul {
+    padding-left: 0;
+}
+.view-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 120px;
+}
+#username_header, #password_header {
+    font-size: 30px;
+}
+#login_ul li {
+    padding-bottom: 15px;
+}
+#username, #password {
+    width: 400px;
+    line-height: 30px;
+    font-size: 15px;
+}
+#login_button {
+    background: #b92c28;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 400px;
+    height: 30px;
+    margin-top: 10px;
+}
+#signup {
+    color: black;
+    text-decoration: revert;
+    display: block;
+    text-align: center;
+}
