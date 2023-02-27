@@ -2,10 +2,10 @@
 
 angular.module('myOrders').component('myOrders', {
     templateUrl: 'my-orders/my-orders.template.html',
-    controller: ['User', '$rootScope',
-        function MyOrdersController(User, $rootScope) {
+    controller: ['Order', 'Ticket', '$rootScope', '$location',
+        function MyOrdersController(Order, Ticket, $rootScope, $location) {
             const self = this;
-            this.orders = User.get($rootScope.token).myOrders();
+            this.orders = Order.get($rootScope.token).myOrders();
 
             this.selectedOrderStatus = 'CREATED';
 
@@ -22,7 +22,7 @@ angular.module('myOrders').component('myOrders', {
             };
 
             self.printTickets = function (orderId) {
-                console.log("print");
+                $location.url("/my-tickets/order/" + orderId);
             };
         }
     ]

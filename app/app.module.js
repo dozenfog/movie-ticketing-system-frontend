@@ -13,5 +13,6 @@ angular.module('movieTicketsApp', [
     'signup',
     'myPage',
     'myOrders',
-    'ticketPicker'
+    'ticketPicker',
+    'ticketPrinter'
 ]);
