@@ -1,10 +1,14 @@
 <div class="container-fluid">
-    <p>
-        Search:
-        <label>
-            <input ng-model="$ctrl.query"/>
-        </label>
-    </p>
+    <ul class="cinemas-sort">
+        <li>
+            <div class="cinemas-text">Search:</div>
+        </li>
+        <li>
+            <label>
+                <input ng-model="$ctrl.query"/>
+            </label>
+        </li>
+    </ul>
     <ul class="cinemas">
         <li ng-repeat="cinema in $ctrl.cinemas | filter:$ctrl.query" class="cinema-mini-stats">
             <a href="#!/movie-theaters/{{cinema.id}}">
@@ -12,7 +16,7 @@
             </a>
             <p>{{cinema.address}}</p>
             <p>{{cinema.city.name}}</p>
-            <p><img ng-src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="phone" width="20px" height="20px">
+            <p><img ng-src="https://cdn-icons-png.flaticon.com/512/552/552489.png" alt="phone" width="20px" height="20px">
                 {{cinema.phone}}</p>
         </li>
     </ul>

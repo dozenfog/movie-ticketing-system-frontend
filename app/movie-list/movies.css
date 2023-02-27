@@ -2,15 +2,50 @@
     height: min-content;
     width: min-content;
     padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    background-image: linear-gradient(180deg, rgba(8,174,234,1), rgba(42,245,152,1));
 }
 
 .movies {
     display: grid;
-    gap: 10px;
+    row-gap: 30px;
+    column-gap: 15px;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     padding: 0;
 }
 
 .rating {
     padding-top: 10px;
+}
+
+.movies-text {
+    color: white;
+}
+
+.movies-sort {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.movies-sort li {
+    font-size: 20px;
+}
+
+.movies-sort li select {
+    font-size: 20px;
+    height: inherit;
+}
+
+#search-input {
+    height: inherit;
+    width: 250px;
+}
+
+.movies a {
+    color: black;
+    font-weight: bold;
 }

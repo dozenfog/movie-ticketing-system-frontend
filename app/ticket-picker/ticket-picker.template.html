@@ -1,13 +1,8 @@
 <form ng-submit="submitTickets()">
     <p>Choose seat number:</p>
-    <!--<label>
-        <input type="range" min="1" max="{{$ctrl.seats.capacity}}" ng-model="ticketNum"/>
-    </label>
-    <p>value = {{ticketNum}}</p>-->
     <label>
         <select ng-model="ticketNum">
-            <option ng-repeat="n in [].constructor($ctrl.orders[$ctrl.orders.length - 1].event.movieRoom.capacity)
-            track by $index + 1">
+            <option ng-repeat="n in [].constructor($ctrl.event.movieRoom.capacity) track by $index + 1">
                 {{$index + 1}}
             </option>
         </select>

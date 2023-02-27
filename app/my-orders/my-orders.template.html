@@ -1,13 +1,62 @@
-<ul class="user-orders">
-    <li ng-repeat="order in $ctrl.orders">
-        <p>{{order.creationDateTime}}</p>
-        <p>{{order.overallPrice}}</p>
-        <p>{{order.orderStatus}}</p>
-        <p>{{order.event.startDateTime}}</p>
-        <p>{{order.event.movie.name}}</p>
-        <p>{{order.event.eventStatus}}</p>
-        <p>{{order.event.movieRoom.id}}</p>
-        <p>{{order.event.movieRoom.roomType.name}}</p>
-        <p>-------------------------------------------------</p>
-    </li>
-</ul>
+<div class="container-fluid">
+    <ul class="headers">
+        <li>
+            <button class="orders-header"
+                    ng-class="{'selected-button-orders': $ctrl.selectedOrderStatus == 'CREATED'}"
+                    ng-click="$ctrl.changeDisplay('CREATED')">Awaiting payment
+            </button>
+        </li>
+        <li>
+            <button class="orders-header"
+                    ng-class="{'selected-button-orders': $ctrl.selectedOrderStatus == 'ACTIVE'}"
+                    ng-click="$ctrl.changeDisplay('ACTIVE')">Active
+            </button>
+        </li>
+        <li>
+            <button class="orders-header"
+                    ng-class="{'selected-button-orders': $ctrl.selectedOrderStatus == 'CANCELLED'}"
+                    ng-click="$ctrl.changeDisplay('CANCELLED')">Cancelled
+            </button>
+        </li>
+        <li>
+            <button class="orders-header"
+                    ng-class="{'selected-button-orders': $ctrl.selectedOrderStatus == 'COMPLETED'}"
+                    ng-click="$ctrl.changeDisplay('COMPLETED')">Completed
+            </button>
+        </li>
+    </ul>
+    <ul class="user-orders">
+        <li class="orders-header-names">
+            <ul>
+                <li class="creation-date">Creation date</li>
+                <li class="total">Total</li>
+                <li class="event-date">Event date</li>
+                <li class="movie">Movie</li>
+                <li class="cinema">Cinema</li>
+                <li class="room">Room</li>
+                <li class="actions">Actions</li>
+            </ul>
+        </li>
+        <li ng-repeat="order in $ctrl.orders | filter: $ctrl.filterByStatus" class="orders">
+            <ul>
+                <li class="creation-date">{{order.creationDateTime}}</li>
+                <li class="total">{{order.overallPrice}} $</li>
+                <li class="event-date">{{order.event.startDateTime}}</li>
+                <li class="movie">{{order.event.movie.name}}</li>
+                <li class="cinema">{{order.event.movieRoom.cinemaName}}</li>
+                <li class="room">{{order.event.movieRoom.id}}</li>
+                <li class="actions">
+                    <button ng-click="$ctrl.printTickets(order.id)" class="print-button">
+                        <img src="https://cdn-icons-png.flaticon.com/512/839/839184.png" width="20px" height="20px"
+                             alt="Print">
+                    </button>
+                    <button ng-click="$ctrl.orderPayment(order.id)"
+                            ng-class="{'created-order-pay-button': $ctrl.selectedOrderStatus == 'CREATED'}"
+                            class="pay-button">
+                        Pay
+                    </button>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

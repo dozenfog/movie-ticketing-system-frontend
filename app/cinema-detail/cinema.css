@@ -1,11 +1,11 @@
 .cinema-stats {
-        display: flex;
+    display: flex;
     padding-left: 0;
     padding-top: 10px;
 }
 
 .cinema-stats li + li {
-    border-left: 1px solid #000000
+    border-left: 1px solid white;
 }
 
 .cinema-stats li {
@@ -16,10 +16,16 @@
 
 .search {
     padding-top: 20px;
+    display: flex;
+    gap: 15px;
+    padding-left: 10px;
+}
+.search li {
+    font-size: 20px;
 }
 
 .cinema-events {
-        padding: 0;
+    padding: 0;
 }
 
 .cinema-movie-with-events {
@@ -29,22 +35,27 @@
     display: flex;
     flex-wrap: wrap;
     border-bottom: 1px solid #c0c0c0;
+    padding-left: 10px;
 }
 
 .cinema-movie-with-events-poster {
-    width: 150px;
+    width: 190px;
     flex-grow: 1;
 }
 
 .cinema-movie-stats {
-        padding-left: 0;
+    padding-left: 0;
     padding-right: 15px;
-    width: 150px;
+    width: 190px;
     flex-grow: 1;
 }
 
+.cinema-movie-name {
+    font-size: 27px;
+}
+
 .cinema-movie-poster {
-    width: 150px;
+    width: 190px;
 }
 
 .mini-stats {
@@ -52,7 +63,7 @@
 }
 
 .cinema-movie-rooms {
-        padding: 0;
+    padding: 0;
     flex-grow: 10;
 }
 
@@ -65,7 +76,7 @@
 }
 
 .cinema-movie-rooms-events {
-        padding: 0;
+    padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, 160px);
     gap: 20px;
@@ -73,13 +84,14 @@
 
 .cinema-movie-with-events-event {
     flex-grow: 1;
-}
-
-.cinema-movie-with-events-event {
-    border-radius: 4px;
-    border: 1px solid #000000;
     text-align: center;
-    padding: 10px;
+}
+.cinema-movie-with-events-event button {
+    background-image: linear-gradient(270deg, #08AEEA 0%, #2AF598 100%);
+    padding: 15px 10px 15px 10px;
+    border-radius: 4px;
+    color: black;
+    font-weight: bold;
 }
 
 .cinema-movie-with-events-event:hover {
@@ -94,4 +106,11 @@ span {
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
+}
+
+.highlight-premium {
+    color: gold;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 17px;
 }

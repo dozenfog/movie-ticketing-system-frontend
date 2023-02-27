@@ -1,0 +1,79 @@
+.orders-header {
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    height: 45px;
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.headers {
+    display: flex;
+    justify-content: space-between;
+}
+
+.headers li {
+    flex: 1;
+    font-size: 20px;
+}
+
+.user-orders li {
+    padding: 5px 10px 5px 10px;
+    background-image: linear-gradient(270deg, rgba(8, 174, 234, 0.4), rgba(42, 245, 152, 0.4));
+    font-size: 15px;
+}
+
+.selected-button-orders, .orders-header-names {
+    background-color: #0579a3;
+}
+
+.user-orders ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.user-orders ul li {
+    background: transparent;
+}
+
+.creation-date, .event-date, .movie, .cinema {
+    flex: 3;
+}
+
+.total, .room, .actions {
+    flex: 1;
+    text-align: center;
+}
+
+.orders-header-names li + li {
+    border-left: 1px solid white;
+}
+
+.orders-header-names, .orders {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.pay-button {
+    visibility: hidden;
+}
+
+.created-order-pay-button {
+    visibility: visible;
+    color: black;
+    border: none;
+    margin-left: 10px;
+    background-color: darkgrey;
+}
+
+.print-button {
+    width: 20px;
+    border: 0;
+    background: transparent;
+    margin-right: 2px;
+}

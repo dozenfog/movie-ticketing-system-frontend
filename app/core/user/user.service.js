@@ -2,14 +2,7 @@
 
 angular.module('core.user').factory('User', ['$resource',
     function ($resource) {
-        var isAuthenticated = false;
         return {
-            isAuthenticated: function () {
-                return isAuthenticated;
-            },
-            setAuthenticated: function (isAuth) {
-                isAuthenticated = isAuth;
-            },
             get: function (token) {
                 return $resource('', {}, {
                     login: {
@@ -86,6 +79,14 @@ angular.module('core.user').factory('User', ['$resource',
                         params: {
                             tickets: '@tickets',
                             //orderId: '@orderId',
+                        }
+                    },
+                    findEventById: {
+                        url: 'http://localhost:8080/events/:eventId',
+                        method: 'GET',
+                        isArray: false,
+                        params: {
+                            orderId: '@eventId',
                         }
                     }
                 });

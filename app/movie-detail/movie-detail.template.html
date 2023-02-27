@@ -17,11 +17,11 @@
 
     <ul class="genres">
         <li ng-repeat="genre in $ctrl.movie.genres">
-            <span>{{genre.name}}</span>
+            <span>{{genre.name.replaceAll("_", " ")}}</span>
         </li>
     </ul>
 
-    <h3 class="photos-heading">Photos</h3>
+    <h3 class="photos-heading">Gallery</h3>
 
     <img ng-src="{{$ctrl.mainImageUrl}}" class="movie-main-image"/>
 

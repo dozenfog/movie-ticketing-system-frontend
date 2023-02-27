@@ -3,9 +3,9 @@
 angular.module('cinemaDetail').component('cinemaDetail', {
     templateUrl: 'cinema-detail/cinema-detail.template.html',
     controller: ['$routeParams', 'Cinema', 'User', '$rootScope', '$scope', '$location', '$window',
-        function CinemaDetailController($routeParams, Cinema, User, $rootScope, $scope, $location, $window) {
+        function CinemaDetailController($routeParams, Cinema, User, $rootScope, $scope, $location) {
             var self = this;
-            this.cinema = Cinema.getById({cinemaId: $routeParams.cinemaId}, function (cinema) {
+            self.cinema = Cinema.getById({cinemaId: $routeParams.cinemaId}, function (cinema) {
                 self.setEventsMatrix(
                     self.groupBy(cinema.events, event => event.movie.id)
                         .map(eventsListOneMovie => self.groupBy(eventsListOneMovie, event => event.movieRoom.id))
@@ -31,16 +31,11 @@ angular.module('cinemaDetail').component('cinemaDetail', {
             };
 
             $scope.buyTicket = function (eventId) {
-                self.user = User.get($rootScope.token).myPage({}, function success(user) {
-                    User.get($rootScope.token).addOrder({
-                            creationDateTime: new Date(),
-                            userId: user.id,
-                            eventId: eventId
-                        },
-                        function successOrder(order) {
-                            $window.location.href = '#!/tickets/pick/' + order.id;
-                        });
-                });
+                $location.url("/buy-tickets/layout/" + eventId);
+            };
+
+            self.formatDate = function (date) {
+                return date.format("DD-MM-YYYY, h:mm a");
             };
         }
     ]

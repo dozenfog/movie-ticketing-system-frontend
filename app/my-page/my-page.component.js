@@ -5,7 +5,9 @@ angular.module('myPage').component('myPage', {
     controller: ['User', '$rootScope',
         function MyPageController(User, $rootScope) {
             const self = this;
-            self.info = User.get($rootScope.token).myPage();
+            self.info = User.get($rootScope.token).myPage({}, function success(info) {
+                $rootScope.userId = info.id;
+            });
 
             self.getWeatherImage = function getWeatherImage(cloudiness) {
                 return cloudiness === 0 ?

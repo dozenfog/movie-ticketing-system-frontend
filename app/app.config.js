@@ -18,20 +18,17 @@ angular.module('movieTicketsApp').config(['$routeProvider',
             template: '<my-page></my-page>'
         }).when('/orders/me', {
             template: '<my-orders></my-orders>'
-        }).when('/tickets/pick/:orderId', {
+        }).when('/buy-tickets/layout/:eventId', {
             template: '<ticket-picker></ticket-picker>'
-        }).otherwise('/movies');
+        })
+            .otherwise('/login');
     }
-]).run(['$rootScope', '$location', 'User', function ($rootScope, $location, User) {
+]).run(['$rootScope', '$location', function ($rootScope, $location) {
     $rootScope.$on("$locationChangeStart", function (event, next) {
-        const urls = ["/account", "/me", "/orders/me", "/tickets/pick/:orderId"];
+        const urls = ["/account", "/me", "/orders/me", "/buy-tickets/layout/"];
         urls.forEach(url => {
-            if (next.toString().endsWith(url)) {
-                if (User.isAuthenticated()) {
-                    $location.url(url);
-                } else {
-                    $location.url("/login");
-                }
+            if (next.toString().includes(url) && !$rootScope.token) {
+                $location.url("/login");
             }
         });
     });
