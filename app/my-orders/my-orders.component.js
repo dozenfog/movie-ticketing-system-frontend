@@ -2,8 +2,8 @@
 
 angular.module('myOrders').component('myOrders', {
     templateUrl: 'my-orders/my-orders.template.html',
-    controller: ['Order', 'Ticket', '$rootScope', '$location', '$route',
-        function MyOrdersController(Order, Ticket, $rootScope, $location, $route) {
+    controller: ['Order', 'Ticket', '$rootScope', '$location', '$route', '$scope',
+        function MyOrdersController(Order, Ticket, $rootScope, $location, $route, $scope) {
             const self = this;
             this.orders = Order.get($rootScope.token).myOrders();
 
@@ -17,8 +17,16 @@ angular.module('myOrders').component('myOrders', {
                 return order.orderStatus === self.selectedOrderStatus;
             };
 
-            self.orderPayment = function (orderId) {
+            $scope.orderPayment = function (orderId) {
                 Order.get($rootScope.token).payForOrder({
+                    orderId: orderId
+                }, function success() {
+                    $route.reload();
+                });
+            };
+
+            $scope.orderCancellation = function (orderId) {
+                Order.get($rootScope.token).cancelOrder({
                     orderId: orderId
                 }, function success() {
                     $route.reload();

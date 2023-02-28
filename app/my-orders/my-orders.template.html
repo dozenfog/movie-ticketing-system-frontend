@@ -52,11 +52,20 @@
                         <img src="https://cdn-icons-png.flaticon.com/512/839/839184.png" width="20px" height="20px"
                              alt="Print">
                     </button>
-                    <button ng-click="$ctrl.orderPayment(order.id)"
-                            ng-if="$ctrl.selectedOrderStatus == 'CREATED'"
-                            class="pay-button">
-                        Pay
-                    </button>
+                    <ul ng-if="$ctrl.selectedOrderStatus == 'CREATED'">
+                        <li>
+                            <button ng-click="orderPayment(order.id)"
+                                    class="pay-button">
+                                Pay
+                            </button>
+                        </li>
+                        <li>
+                            <button ng-click="orderCancellation(order.id)"
+                                    class="cancel-button">
+                                Cancel
+                            </button>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </li>

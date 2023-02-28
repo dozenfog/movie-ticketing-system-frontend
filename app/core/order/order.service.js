@@ -36,6 +36,17 @@ angular.module('core.order').factory('Order', ['$resource',
                         params: {
                             orderId: '@orderId',
                         }
+                    },
+                    cancelOrder: {
+                        url: 'http://localhost:8080/orders/:orderId/cancellation',
+                        method: 'PUT',
+                        isArray: false,
+                        headers: {
+                            'Authorization': token,
+                        },
+                        params: {
+                            orderId: '@orderId',
+                        }
                     }
                 });
             }

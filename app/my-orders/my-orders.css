@@ -42,7 +42,7 @@
 }
 
 .creation-date, .event-date, .movie, .cinema {
-    flex: 3;
+    flex: 2;
 }
 
 .total, .room, .actions {
@@ -63,6 +63,12 @@
     color: black;
     border: none;
     background-color: darkgrey;
+}
+
+.cancel-button {
+    color: black;
+    border: none;
+    background-color: #e9490c;
 }
 
 .print-button {
