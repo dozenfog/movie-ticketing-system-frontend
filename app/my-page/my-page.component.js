@@ -2,8 +2,8 @@
 
 angular.module('myPage').component('myPage', {
     templateUrl: 'my-page/my-page.template.html',
-    controller: ['User', '$rootScope',
-        function MyPageController(User, $rootScope) {
+    controller: ['User', '$rootScope', '$scope','$location',
+        function MyPageController(User, $rootScope, $scope, $location) {
             const self = this;
             self.info = User.get($rootScope.token).myPage({}, function success(info) {
                 $rootScope.userId = info.id;
@@ -15,6 +15,11 @@ angular.module('myPage').component('myPage', {
                     cloudiness === 100 ?
                         "https://cdn-icons-png.flaticon.com/512/6316/6316087.png" :
                         "https://cdn-icons-png.flaticon.com/512/1146/1146869.png";
+            };
+
+            $scope.logout = function () {
+                $rootScope.token = undefined;
+                $location.url("/movies");
             };
         }
     ]
