@@ -7,7 +7,19 @@ angular.module('ticketPicker').component('ticketPicker', {
             const self = this;
             const urlParts = $location.$$path.split("/");
             self.eventId = urlParts[urlParts.length - 1];
-            self.event = Event.get().findEventById({eventId: self.eventId});
+            Event.get().findEventById({eventId: self.eventId}, function success(event) {
+                self.seats = $rootScope.groupBy(event.movieRoom.seats, seat => seat.rowNumber);
+            });
+            self.chosenSeatsIds = [];
+
+            $scope.addOrRemoveSeat = function (seatId) {
+                const index = self.chosenSeatsIds.indexOf(seatId);
+                if (index > -1) {
+                    self.chosenSeatsIds.splice(index, 1);
+                } else {
+                    self.chosenSeatsIds.push(seatId);
+                }
+            };
 
             $scope.submitTickets = function () {
                 Order.get($rootScope.token).myOrders({}, function success(orders) {
@@ -30,7 +42,7 @@ angular.module('ticketPicker').component('ticketPicker', {
             self.addTicketsToOrder = function (orderId) {
                 Ticket.get($rootScope.token).addTickets({
                         orderId: orderId,
-                    }, [parseInt($scope.ticketNum)],
+                    }, self.chosenSeatsIds,
                     function success() {
                         $location.url('/orders/me');
                     });

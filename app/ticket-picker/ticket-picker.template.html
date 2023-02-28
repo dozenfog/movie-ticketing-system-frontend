@@ -1,11 +1,15 @@
-<form ng-submit="submitTickets()">
-    <p>Choose seat number:</p>
-    <label>
-        <select ng-model="ticketNum">
-            <option ng-repeat="n in [].constructor($ctrl.event.movieRoom.capacity) track by $index + 1">
-                {{$index + 1}}
-            </option>
-        </select>
-    </label>
-    <button type="submit">Save</button>
-</form>
+<ul class="rows">
+    <li ng-repeat="seatsInRow in $ctrl.seats" class="row">
+        <ul class="seats">
+            <li ng-repeat="seat in seatsInRow" class="seat">
+                <button ng-click="addOrRemoveSeat(seat.id)"
+                        ng-class="{'chosen-seat': $ctrl.chosenSeatsIds.includes(seat.id) == true}">
+                    {{seat.placeNumber}}
+                </button>
+            </li>
+        </ul>
+    </li>
+</ul>
+<div class="choose-button">
+    <button ng-click="submitTickets()">Save</button>
+</div>

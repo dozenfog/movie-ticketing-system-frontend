@@ -7,12 +7,12 @@ angular.module('cinemaDetail').component('cinemaDetail', {
             var self = this;
             self.cinema = Cinema.getById({cinemaId: $routeParams.cinemaId}, function (cinema) {
                 self.setEventsMatrix(
-                    self.groupBy(cinema.events, event => event.movie.id)
-                        .map(eventsListOneMovie => self.groupBy(eventsListOneMovie, event => event.movieRoom.id))
+                    $rootScope.groupBy(cinema.events, event => event.movie.id)
+                        .map(eventsListOneMovie => $rootScope.groupBy(eventsListOneMovie, event => event.movieRoom.id))
                 );
             });
 
-            self.groupBy = function groupBy(list, keyGetter) {
+            $rootScope.groupBy = function groupBy(list, keyGetter) {
                 const map = new Map();
                 list.forEach((item) => {
                     const key = keyGetter(item);
