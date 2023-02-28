@@ -21,7 +21,7 @@ angular.module('movieTicketsApp').config(['$routeProvider',
         }).when('/buy-tickets/layout/:eventId', {
             template: '<ticket-picker></ticket-picker>'
         }).when('/my-tickets/order/:orderId', {
-            template: ''
+            template: '<ticket-printer></ticket-printer>'
         })
             .otherwise('/login');
     }

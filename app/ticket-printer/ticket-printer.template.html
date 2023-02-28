@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <ul class="tickets">
+        <li ng-repeat="ticket in $ctrl.tickets" class="ticket">
+            <div class="ticket-cinema-name">{{ticket.order.event.movieRoom.cinemaName}}</div>
+            <ul class="pic-with-info">
+                <li>
+                    <img ng-src="{{ticket.order.event.movie.imageUrl}}" alt="Movie" width="140px"/>
+                </li>
+                <li>
+                    <div class="ticket-movie-name">{{ticket.order.event.movie.name}}</div>
+                    <div>{{ticket.order.event.startDateTime}}</div>
+                    <ul class="room-stats">
+                        <li class="ticket-room">
+                            Room {{ticket.order.event.movieRoom.id}}
+                        </li>
+                        <li class="ticket-room-type"
+                            ng-class="{'highlight-premium': ticket.order.event.movieRoom.roomType.name == 'PREMIUM'}">
+                            <div>{{ticket.order.event.movieRoom.roomType.name}}</div>
+                        </li>
+                    </ul>
+                    <ul class="qr">
+                        <li>
+                            <img src="http://api.qrserver.com/v1/create-qr-code/?color=000000&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ&amp;qzone=1&amp;margin=0&amp;size=400x400&amp;ecc=L"
+                                 alt="qr" width="100px"/>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="ticket-stats">
+                <li>PRICE: {{ticket.price}} $</li>
+                <li>ROW: {{ticket.seat.rowNumber}}</li>
+                <li>PLACE: {{ticket.seat.placeNumber}}</li>
+            </ul>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,58 @@
+.tickets, .pic-with-info, .room-stats, .ticket-stats {
+    display: flex;
+    padding-top: 10px;
+}
+
+.tickets {
+    gap: 30px;
+}
+
+.ticket {
+    background-color: white;
+    color: black;
+    padding: 10px;
+}
+
+.ticket-cinema-name {
+    border-bottom: 1px solid gray;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.pic-with-info {
+    padding: 10px;
+    gap: 10px;
+}
+
+.ticket-movie-name {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.qr {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 25px;
+}
+
+.ticket-room {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.room-stats {
+    gap: 15px;
+}
+
+.ticket-room-type {
+    font-size: 17px;
+}
+
+.qr img {
+    border-radius: 0;
+}
+
+.ticket-stats {
+    justify-content: space-around;
+}

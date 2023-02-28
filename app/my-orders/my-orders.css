@@ -60,14 +60,8 @@
 }
 
 .pay-button {
-    visibility: hidden;
-}
-
-.created-order-pay-button {
-    visibility: visible;
     color: black;
     border: none;
-    margin-left: 10px;
     background-color: darkgrey;
 }
 
