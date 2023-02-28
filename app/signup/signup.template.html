@@ -45,20 +45,24 @@
             </li>
             <li>
                 <div class="field_header">City</div>
-                <label for="city">
-                    <input type="number" placeholder="Enter city id" id="city" ng-model="cityId" required>
+                <label>
+                    <select ng-model="userCitySelect" class="select-city">
+                        <option ng-repeat="city in $ctrl.cities" value="{{city.id}}">{{city.name}}</option>
+                    </select>
                 </label>
             </li>
             <li>
                 <div class="field_header">Birthdate</div>
                 <label for="birthdate">
-                    <input type="text" placeholder="Enter date" id="birthdate" ng-model="birthDate">
+                    <input type="date" placeholder="Enter date" id="birthdate" ng-model="birthDate">
                 </label>
             </li>
             <li>
                 <div class="field_header">User category</div>
-                <label for="category">
-                    <input type="number" placeholder="Enter user category" id="category" ng-model="userCategoryId" required>
+                <label>
+                    <select ng-model="userCategorySelect" class="select-user-cat">
+                        <option ng-repeat="cat in $ctrl.userCategories" value="{{cat.id}}">{{cat.name}}</option>
+                    </select>
                 </label>
             </li>
             <li>

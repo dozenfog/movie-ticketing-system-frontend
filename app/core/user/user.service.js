@@ -36,6 +36,22 @@ angular.module('core.user').factory('User', ['$resource',
                         headers: {
                             'Authorization': token
                         }
+                    },
+                    getAllCities: {
+                        url: 'http://localhost:8080/users/cities',
+                        method: 'GET',
+                        isArray: true,
+                        headers: {
+                            'Authorization': token
+                        }
+                    },
+                    getAllUserCategories: {
+                        url: 'http://localhost:8080/users/user-categories',
+                        method: 'GET',
+                        isArray: true,
+                        headers: {
+                            'Authorization': token
+                        }
                     }
                 });
             }
