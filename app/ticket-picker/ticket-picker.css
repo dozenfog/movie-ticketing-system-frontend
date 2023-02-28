@@ -9,6 +9,12 @@
     color: white;
 }
 
+.taken-seat {
+    background-color: #4a4949;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
 .rows {
     padding-top: 20px;
 }

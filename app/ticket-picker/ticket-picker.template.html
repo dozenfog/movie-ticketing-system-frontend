@@ -3,7 +3,8 @@
         <ul class="seats">
             <li ng-repeat="seat in seatsInRow" class="seat">
                 <button ng-click="addOrRemoveSeat(seat.id)"
-                        ng-class="{'chosen-seat': $ctrl.chosenSeatsIds.includes(seat.id) == true}">
+                        ng-class="{'chosen-seat': $ctrl.chosenSeatsIds.includes(seat.id) == true,
+                        'taken-seat': $ctrl.boughtTicketsIds.includes(seat.id) == true}">
                     {{seat.placeNumber}}
                 </button>
             </li>

@@ -56,3 +56,17 @@
 .ticket-stats {
     justify-content: space-around;
 }
+
+.remove-ticket-button button {
+    border-radius: 5px;
+    color: black;
+    background-color: #e9490c;
+    border: none;
+    font-size: 17px;
+}
+
+.remove-ticket-button {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}

@@ -31,6 +31,13 @@
                 <li>ROW: {{ticket.seat.rowNumber}}</li>
                 <li>PLACE: {{ticket.seat.placeNumber}}</li>
             </ul>
+            <ul class="remove-ticket-button">
+                <li>
+                    <button ng-click="removeTicket(ticket.id)">
+                        Remove
+                    </button>
+                </li>
+            </ul>
         </li>
     </ul>
 </div>

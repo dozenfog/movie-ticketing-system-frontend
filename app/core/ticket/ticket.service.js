@@ -23,6 +23,14 @@ angular.module('core.ticket').factory('Ticket', ['$resource',
                         headers: {
                             'Authorization': token,
                         }
+                    },
+                    removeTicket: {
+                        url: 'http://localhost:8080/tickets/:ticketId',
+                        method: 'DELETE',
+                        isArray: false,
+                        headers: {
+                            'Authorization': token,
+                        }
                     }
                 });
             }

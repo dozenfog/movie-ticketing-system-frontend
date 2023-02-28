@@ -8,6 +8,7 @@ angular.module('ticketPicker').component('ticketPicker', {
             const urlParts = $location.$$path.split("/");
             self.eventId = urlParts[urlParts.length - 1];
             Event.get().findEventById({eventId: self.eventId}, function success(event) {
+                self.boughtTicketsIds = event.boughtTicketIds;
                 self.seats = $rootScope.groupBy(event.movieRoom.seats, seat => seat.rowNumber);
             });
             self.chosenSeatsIds = [];
