@@ -52,6 +52,23 @@ angular.module('core.user').factory('User', ['$resource',
                         headers: {
                             'Authorization': token
                         }
+                    },
+                    editPage: {
+                        url: 'http://localhost:8080/users/me',
+                        params: {
+                            firstName: '@firstName',
+                            lastName: '@lastName',
+                            email: '@email',
+                            phone: '@phone',
+                            password: '@password',
+                            address: '@address',
+                            cityId: '@cityId'
+                        },
+                        method: 'PUT',
+                        isArray: false,
+                        headers: {
+                            'Authorization': token
+                        }
                     }
                 });
             }

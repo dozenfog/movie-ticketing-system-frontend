@@ -1,8 +1,7 @@
 body {
     padding: 0;
     margin: 0;
-    background-image: url("/resources/images/wallpaperflare.com_wallpaper.jpg");
-    background-repeat: no-repeat;
+    background-image: url("/resources/images/wallpaperflare.com_wallpaper_compressed.jpg");
     background-size: cover;
 }
 

@@ -31,7 +31,7 @@
                 <li>ROW: {{ticket.seat.rowNumber}}</li>
                 <li>PLACE: {{ticket.seat.placeNumber}}</li>
             </ul>
-            <ul class="remove-ticket-button">
+            <ul class="remove-ticket-button" ng-if="ticket.order.orderStatus == 'ACTIVE'">
                 <li>
                     <button ng-click="removeTicket(ticket.id)">
                         Remove

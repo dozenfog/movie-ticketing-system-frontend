@@ -1,0 +1,37 @@
+#edit_form {
+    padding: 20px 20px 0 20px;
+    border-radius: 10px;
+    background-image: linear-gradient(270deg, rgba(8,174,234,0.4), rgba(42,245,152,0.4));
+}
+
+#edit_page {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+#edit_ul {
+    margin-bottom: 0;
+}
+
+#edit_ul li {
+    padding-bottom: 15px;
+}
+
+#edit_button {
+    background-image: linear-gradient(270deg, #08AEEA 0%, #2AF598 100%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 400px;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.select-city {
+    font-size: 15px;
+    width: 400px;
+    height: 30px;
+}
