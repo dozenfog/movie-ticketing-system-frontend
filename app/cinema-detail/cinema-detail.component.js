@@ -2,7 +2,7 @@
 
 angular.module('cinemaDetail').component('cinemaDetail', {
     templateUrl: 'cinema-detail/cinema-detail.template.html',
-    controller: ['$routeParams', 'Cinema', 'User', '$rootScope', '$scope', '$location', '$window',
+    controller: ['$routeParams', 'Cinema', 'User', '$rootScope', '$scope', '$location',
         function CinemaDetailController($routeParams, Cinema, User, $rootScope, $scope, $location) {
             var self = this;
             self.cinema = Cinema.getById({cinemaId: $routeParams.cinemaId}, function (cinema) {

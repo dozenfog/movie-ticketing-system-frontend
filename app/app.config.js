@@ -24,12 +24,14 @@ angular.module('movieTicketsApp').config(['$routeProvider',
             template: '<ticket-printer></ticket-printer>'
         }).when('/me/edit', {
             template: '<edit-page></edit-page>'
+        }).when('/admin/users', {
+            template: '<admin-user></admin-user>'
         })
             .otherwise('/login');
     }
 ]).run(['$rootScope', '$location', function ($rootScope, $location) {
     $rootScope.$on("$locationChangeStart", function (event, next) {
-        const urls = ["/account", "/me", "/orders/me", "/buy-tickets/layout/", "/my-tickets/order/", "me/edit"];
+        const urls = ["/account", "/me", "/buy-tickets/layout/", "/my-tickets/order/", "admin"];
         urls.forEach(url => {
             if (next.toString().includes(url) && !$rootScope.token) {
                 $location.url("/login");

@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <ul class="admin-users-list">
+        <li class="admin-user-headers">
+            <ul>
+                <li class="admin-user">First name</li>
+                <li class="admin-user">Last name</li>
+                <li class="admin-user">User name</li>
+                <li class="admin-user-email">Email</li>
+                <li class="admin-user">Actions</li>
+            </ul>
+        </li>
+        <li ng-repeat="user in $ctrl.users" class="admin-users">
+            <ul>
+                <li class="admin-user">{{user.firstName}}</li>
+                <li class="admin-user">{{user.lastName}}</li>
+                <li class="admin-user">{{user.userName}}</li>
+                <li class="admin-user-email">{{user.email}}</li>
+                <li class="admin-user">
+                    <button ng-click="getUserDetails(user.id)"
+                            class="user-details-button">
+                        Details
+                    </button>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>

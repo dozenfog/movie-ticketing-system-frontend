@@ -110,6 +110,9 @@
     <p>
         <a href="#!orders/me" class="my-orders-link">My Orders →</a>
     </p>
+    <p ng-if="$root.isAdmin == true">
+        <a href="#!/admin/users" class="admin-users-link">Statistics →</a>
+    </p>
     <p>
         <button class="logout" ng-click="logout()">Log out</button>
     </p>
