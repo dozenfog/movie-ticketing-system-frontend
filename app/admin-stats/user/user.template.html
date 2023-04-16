@@ -10,17 +10,79 @@
             </ul>
         </li>
         <li ng-repeat="user in $ctrl.users" class="admin-users">
-            <ul>
+            <ul class="admin-users-1">
                 <li class="admin-user">{{user.firstName}}</li>
                 <li class="admin-user">{{user.lastName}}</li>
                 <li class="admin-user">{{user.userName}}</li>
                 <li class="admin-user-email">{{user.email}}</li>
                 <li class="admin-user">
-                    <button ng-click="getUserDetails(user.id)"
+                    <button ng-click="changeUserInfoDisplay(user.id)"
                             class="user-details-button">
                         Details
                     </button>
                 </li>
+            </ul>
+            <ul ng-if="$ctrl.usersWithInfoOpened.get(user.id) === true" class="user-details-info">
+                <div ng-init="details = getUserInfo(user.id)">
+                    <ul>
+                        <li>
+                            <p class="details-name">{{details.firstName}} {{details.lastName}}
+                                [{{details.userName}}]</p>
+                        </li>
+                        <li>
+                            <ul class="details-stats">
+                                <li>
+                                    <p>{{details.address ? details.address : "Unknown address"}}</p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <img ng-src="https://cdn-icons-png.flaticon.com/512/1068/1068530.png" alt="City"
+                                             width="20px"
+                                             height="20px"/>
+                                        {{details.city.name}}
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <img ng-src="https://cdn-icons-png.flaticon.com/512/726/726623.png" alt="Email"
+                                             width="20px"
+                                             height="20px"/>
+                                        {{details.email}}
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <img ng-src="https://cdn-icons-png.flaticon.com/512/552/552489.png" alt="phone"
+                                             width="20px"
+                                             height="20px">
+                                        {{details.phone}}
+                                    </p>
+                                </li>
+                                <li>
+                                    <p id="reg-date">
+                                        Member from: {{details.registrationDateTime}}
+                                    </p>
+                                </li>
+                                <li>
+                                    <a href="#!/me/edit">Edit page</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="details-stats-1">
+                                <li>
+                                    <p>{{details.userCategory.name}}</p>
+                                </li>
+                                <li>
+                                    <p>{{details.userCategory.discountPercentage}}% OFF</p>
+                                </li>
+                                <li ng-if="details.role === 'ADMIN'">
+                                    <p>ADMIN</p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </ul>
         </li>
     </ul>

@@ -7,3 +7,4 @@
 * Movie theaters list
 * Each movie page with rating, description, image & list of genres
 * Each movie theater page with description & movies timetable (events)
+* Admin statistics

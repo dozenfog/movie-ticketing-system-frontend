@@ -4,7 +4,7 @@
     font-size: 15px;
 }
 
-.admin-users-list ul {
+.admin-user-headers ul, .admin-users-1 {
     display: flex;
     justify-content: space-around;
 }
@@ -40,4 +40,29 @@
     color: black;
     border: none;
     background-color: darkgrey;
+}
+
+.user-details-info {
+    background-image: url("../../resources/images/wallpaperflare.com_wallpaper_compressed.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+}
+
+.details-name {
+    font-size: 23px;
+    padding-left: 10px;
+}
+
+.details-stats-1, .details-stats {
+    display: flex;
+    padding-left: 0;
+}
+
+.details-stats-1 li p {
+    background-image: linear-gradient(270deg, rgb(8,174,234), rgb(42,245,152));
+    color: white;
+    height: 32px;
+    font-size: 17px;
+    padding: 5px 10px;
 }

@@ -44,6 +44,11 @@
                 {{$ctrl.info.userCategory.discountPercentage}}% OFF
             </p>
         </li>
+        <li ng-if="$root.isAdmin == true">
+            <p>
+                ADMIN
+            </p>
+        </li>
     </ul>
     <h2 id="weather_header">Today</h2>
     <ul class="weather-stats">
@@ -107,13 +112,15 @@
             </ul>
         </li>
     </ul>
-    <p>
-        <a href="#!orders/me" class="my-orders-link">My Orders →</a>
-    </p>
-    <p ng-if="$root.isAdmin == true">
-        <a href="#!/admin/users" class="admin-users-link">Statistics →</a>
-    </p>
-    <p>
-        <button class="logout" ng-click="logout()">Log out</button>
-    </p>
+    <ul class="user-control-buttons">
+        <li class="small-li-button">
+            <a href="#!orders/me" class="my-orders-link">My Orders</a>
+        </li>
+        <li class="big-li-button" ng-if="$root.isAdmin == true">
+            <a href="#!/admin/users" class="admin-users-link">Statistics</a>
+        </li>
+        <li class="small-li-button">
+            <button class="logout" ng-click="logout()">Log out</button>
+        </li>
+    </ul>
 </div>
