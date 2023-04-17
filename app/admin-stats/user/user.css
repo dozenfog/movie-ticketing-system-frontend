@@ -66,3 +66,10 @@
     font-size: 17px;
     padding: 5px 10px;
 }
+
+.delete-user-button {
+    background: transparent;
+    color: #337ab7;
+    padding: 0;
+    border: none;
+}

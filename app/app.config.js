@@ -26,6 +26,8 @@ angular.module('movieTicketsApp').config(['$routeProvider',
             template: '<edit-page></edit-page>'
         }).when('/admin/users', {
             template: '<admin-user></admin-user>'
+        }).when('/admin/users/edit/:userId', {
+            template: '<admin-user-edit></admin-user-edit>'
         })
             .otherwise('/login');
     }

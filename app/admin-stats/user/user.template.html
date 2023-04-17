@@ -64,7 +64,10 @@
                                     </p>
                                 </li>
                                 <li>
-                                    <a href="#!/me/edit">Edit page</a>
+                                    <a href="#!/admin/users/edit/{{details.id}}">Edit page</a>
+                                </li>
+                                <li>
+                                    <button ng-click="deleteUser(details.id)" class="delete-user-button">Delete page</button>
                                 </li>
                             </ul>
                         </li>

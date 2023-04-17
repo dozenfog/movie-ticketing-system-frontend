@@ -50,6 +50,7 @@ angular.module('core.admin').factory('Admin', ['$resource',
                     },
                     getTopActiveByMovieRoomTickets: {
                         url: 'http://localhost:8080/admin/users/top/:cinemaId',
+                        method: 'GET',
                         params: {
                             cinemaId: '@cinemaId',
                             startDate: '@startDate',

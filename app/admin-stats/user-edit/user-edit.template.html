@@ -1,0 +1,58 @@
+<div id="edit_page">
+    <form ng-submit="submitAdminEditPageForm()" id="edit_form">
+        <ul id="edit_ul">
+            <li>
+                <div class="field_header">New first name</div>
+                <label for="firstName">
+                    <input type="text" placeholder="Enter first name" id="firstName" ng-model="firstName">
+                </label>
+            </li>
+            <li>
+                <div class="field_header">New last name</div>
+                <label for="lastName">
+                    <input type="text" placeholder="Enter last name" id="lastName" ng-model="lastName"
+                           required>
+                </label>
+            </li>
+            <li>
+                <div class="field_header">New email</div>
+                <label for="email">
+                    <input type="email" placeholder="Enter email" id="email" ng-model="email"
+                           required>
+                </label>
+            </li>
+            <li>
+                <div class="field_header">New phone</div>
+                <label for="phone">
+                    <input type="text" placeholder="Enter phone" id="phone" ng-model="phone">
+                </label>
+            </li>
+            <li>
+                <div class="field_header">New password</div>
+                <label for="password">
+                    <input type="password" placeholder="Enter new password" id="password" ng-model="password">
+                </label>
+            </li>
+            <li>
+                <div class="field_header">New address</div>
+                <label for="address">
+                    <input type="text" placeholder="Enter new address" id="address" ng-model="address">
+                </label>
+            </li>
+            <li>
+                <div class="field_header">New city</div>
+                <label>
+                    <select ng-model="userCitySelect" class="select-city">
+                        <option ng-repeat="city in $ctrl.cities" value="{{city.id}}"
+                                ng-selected="city.id === $ctrl.oldUserInfo.city.id">
+                            {{city.name}}
+                        </option>
+                    </select>
+                </label>
+            </li>
+            <li>
+                <button type="submit" id="signup_button">Submit</button>
+            </li>
+        </ul>
+    </form>
+</div>
