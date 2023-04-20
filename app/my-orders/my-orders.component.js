@@ -34,7 +34,7 @@ angular.module('myOrders').component('myOrders', {
             };
 
             self.printTickets = function (orderId) {
-                $location.url("/my-tickets/order/" + orderId);
+                $location.url("/tickets/order/" + orderId);
             };
         }
     ]

@@ -1,0 +1,75 @@
+.admin-users-list li {
+    padding: 5px 10px 5px 10px;
+    background-image: linear-gradient(270deg, rgba(8, 174, 234, 0.4), rgba(42, 245, 152, 0.4));
+    font-size: 15px;
+}
+
+.admin-user-headers ul, .admin-users-1 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.admin-users-list ul li {
+    background: transparent;
+}
+
+.admin-user {
+    flex: 1;
+    text-align: center;
+}
+
+.admin-user-email {
+    flex: 2;
+    text-align: center;
+}
+
+.admin-user-headers li+li {
+    border-left: 1px solid white;
+}
+
+.admin-users, .admin-user-headers {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.admin-user-headers {
+    background-color: #0579a3;
+}
+
+.user-details-button {
+    color: black;
+    border: none;
+    background-color: darkgrey;
+}
+
+.user-details-info {
+    background-image: url("../../resources/images/wallpaperflare.com_wallpaper_compressed.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+}
+
+.details-name {
+    font-size: 23px;
+    padding-left: 10px;
+}
+
+.details-stats-1, .details-stats {
+    display: flex;
+    padding-left: 0;
+}
+
+.details-stats-1 li p {
+    background-image: linear-gradient(270deg, rgb(8,174,234), rgb(42,245,152));
+    color: white;
+    height: 32px;
+    font-size: 17px;
+    padding: 5px 10px;
+}
+
+.delete-user-button {
+    background: transparent;
+    color: #337ab7;
+    padding: 0;
+    border: none;
+}
