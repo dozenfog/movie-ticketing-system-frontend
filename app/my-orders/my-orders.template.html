@@ -46,23 +46,24 @@
                 <li class="cinema">{{order.event.movieRoom.cinemaName}}</li>
                 <li class="room">{{order.event.movieRoom.id}}</li>
                 <li class="actions">
-                    <button ng-if="$ctrl.selectedOrderStatus != 'CREATED'"
-                            ng-click="$ctrl.printTickets(order.id)"
-                            class="print-button">
-                        <img src="https://cdn-icons-png.flaticon.com/512/839/839184.png" width="20px" height="20px"
-                             alt="Print">
-                    </button>
-                    <ul ng-if="$ctrl.selectedOrderStatus == 'CREATED'">
-                        <li>
+                    <ul>
+                        <li ng-if="$ctrl.selectedOrderStatus == 'CREATED'">
                             <button ng-click="orderPayment(order.id)"
                                     class="pay-button">
                                 Pay
                             </button>
                         </li>
-                        <li>
+                        <li ng-if="$ctrl.selectedOrderStatus == 'CREATED'">
                             <button ng-click="orderCancellation(order.id)"
                                     class="cancel-button">
                                 Cancel
+                            </button>
+                        </li>
+                        <li>
+                            <button ng-click="$ctrl.printTickets(order.id)"
+                                    class="print-button">
+                                <img src="https://cdn-icons-png.flaticon.com/512/839/839184.png" width="20px" height="20px"
+                                     alt="Print">
                             </button>
                         </li>
                     </ul>
